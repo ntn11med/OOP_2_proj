@@ -13,7 +13,7 @@ public abstract class Figure implements Drawable {
 	
 	public Figure(Color c) {
 		this.color = c;
-		this.isSelected = true;
+		this.isSelected = false;
 	}
 	
 	@Override
