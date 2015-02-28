@@ -19,8 +19,8 @@ public class Outline extends Point {
 	protected void drawSpecific(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		BasicStroke org = (BasicStroke) g2d.getStroke();
-		float dash1[] = {10.0f};
-		BasicStroke dashed =new BasicStroke(1.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER, 10.0f, dash1, 0.0f);
+		float dash1[] = {5.0f};
+		BasicStroke dashed =new BasicStroke(1.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_MITER, 5.0f, dash1, 0.0f);
 		g2d.setStroke(dashed);
 		g2d.drawRect(point.x, point.y, width, height);
 		g2d.setStroke(org);
