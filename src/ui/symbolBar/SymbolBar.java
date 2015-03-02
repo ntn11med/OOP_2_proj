@@ -11,16 +11,12 @@ public class SymbolBar extends JPanel {
 	
 	public SymbolBar() {
 		symbolButtonList.add(new JButton("Class"));
-		symbolButtonList.add(new JButton("Interface"));
-		symbolButtonList.add(new JButton("Abs class"));
+		symbolButtonList.add(new JButton("Connector"));
 		drawButtons();
 	}
 	
 	private void drawButtons() {
-		for (JButton b : symbolButtonList) {
-
+		for (JButton b : symbolButtonList)
 			add(b);
-		}
-			
 	}
 }
