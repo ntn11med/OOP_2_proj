@@ -2,6 +2,8 @@ package ui.mainFrame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
@@ -10,12 +12,14 @@ import graphicComponents.ClassComponent;
 import graphicComponents.Rectangle;
 import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
+import ui.symbolBar.SymbolBar;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private FigureList figureList = new FigureList();
 	private FigureViewer figureViewer = new FigureViewer(figureList);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
+	private SymbolBar sb = new SymbolBar();
 
 	public MainFrame() {
 		setGUI();
@@ -43,8 +47,12 @@ public class MainFrame extends JFrame {
 		figureList.add(new Rectangle(825, 825, 12, 12));
 		figureList.add(new ClassComponent(150, 150, 50, 100));
 		figureList.add(new Text(155, 155, "Klass namn"));
-		figureViewer.setBounds(300, 0, 5000, 3000);
-		panel.add(figureViewer);
+		figureViewer.setBounds(0, 0, 5000, 5000);
+		JScrollPane jsp = new JScrollPane(figureViewer);
+		jsp.setBounds(300, 40, 1500, 1000);
+		panel.add(jsp);
+		sb.setBounds(300, 0, 300, 40);
+		panel.add(sb);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
