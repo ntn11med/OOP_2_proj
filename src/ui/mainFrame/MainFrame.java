@@ -1,9 +1,12 @@
 package ui.mainFrame;
 
 import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
 import graphicComponents.Circle;
@@ -41,11 +44,14 @@ public class MainFrame extends JFrame {
 		
 		BorderLayout borderLayout = new BorderLayout();
 		panel.setLayout(borderLayout);
-		panel.add(new FigureViewer(figureList),BorderLayout.CENTER);
+		panel.add(figureViewer,BorderLayout.CENTER);
 		panel.add(new JButton("knapp"), BorderLayout.WEST);
 		panel.add(new JButton("knapp"), BorderLayout.EAST);
 		panel.add(new SymbolBar(),BorderLayout.NORTH);
 		panel.add(new JButton("knapp"), BorderLayout.SOUTH);
+		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
+		figureViewer.addMouseListener(mouseInteraction);
+		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
 	}
 
