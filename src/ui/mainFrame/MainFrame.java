@@ -10,7 +10,9 @@ import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
 import graphicComponents.Circle;
+import graphicComponents.ClassComponent;
 import graphicComponents.Rectangle;
+import ui.propertiesBar.PropertiesBar;
 import ui.symbolBar.SymbolBar;
 
 public class MainFrame extends JFrame {
@@ -41,14 +43,14 @@ public class MainFrame extends JFrame {
 		figureList.add(new Rectangle(650, 650, 50, 50));
 		figureList.add(new Rectangle(750, 750, 25, 25));
 		figureList.add(new Rectangle(825, 825, 12, 12));
-		
+		figureList.add(new ClassComponent(150, 150, 50, 100));
 		BorderLayout borderLayout = new BorderLayout();
 		panel.setLayout(borderLayout);
 		panel.add(figureViewer,BorderLayout.CENTER);
 		panel.add(new JButton("knapp"), BorderLayout.WEST);
 		panel.add(new JButton("knapp"), BorderLayout.EAST);
 		panel.add(new SymbolBar(),BorderLayout.NORTH);
-		panel.add(new JButton("knapp"), BorderLayout.SOUTH);
+		panel.add(new PropertiesBar(), BorderLayout.SOUTH);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);

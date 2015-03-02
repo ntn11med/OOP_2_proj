@@ -23,7 +23,6 @@ public class FigureViewer extends JPanel implements Observer {
 	}
 
 	@Override
-	// Det är denna som anropas av swingtråden när det är dags att rita om
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		for (Figure figure : figureList)
