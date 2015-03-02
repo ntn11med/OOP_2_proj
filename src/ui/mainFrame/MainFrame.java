@@ -1,15 +1,8 @@
 package ui.mainFrame;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import figureComponenets.MouseInteraction;
@@ -20,15 +13,18 @@ import graphicComponents.ClassComponent;
 import graphicComponents.Rectangle;
 import ui.propertiesBar.PropertiesBar;
 import ui.symbolBar.SymbolBar;
+import ui.mainFrame.MainFrameMenuBar;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	FigureList figureList = new FigureList();
 	FigureViewer figureViewer = new FigureViewer(figureList);
+	MainFrameMenuBar menuBar = new MainFrameMenuBar();
 
 	public MainFrame() {
 		setGUI();
 		setBorderLayout();
+		setJMenuBar(menuBar.getMenu());
 		setVisible(true);
 	}
 
@@ -40,8 +36,6 @@ public class MainFrame extends JFrame {
 
 	private void setBorderLayout() {
 		JPanel panel = new JPanel();
-		setMenuBar();
-
 		// Adding figures to panel
 		figureList.add(new Circle(100, 100, 50));
 		figureList.add(new Circle(200, 200, 25));
@@ -63,54 +57,6 @@ public class MainFrame extends JFrame {
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
-	}
-
-	private void setMenuBar() {
-		JMenuBar menuBar = new JMenuBar();
-		setJMenuBar(menuBar);
-		JMenu fileMenu = new JMenu("File");
-		JMenu editMenu = new JMenu("Edit");
-		menuBar.add(fileMenu);
-		menuBar.add(editMenu);
-
-		JMenuItem newAction = new JMenuItem("New");
-		JMenuItem openAction = new JMenuItem("Open");
-		JMenuItem saveAction = new JMenuItem("Save");
-		JMenuItem saveAsAction = new JMenuItem("Save As");
-		JMenuItem closeAction = new JMenuItem("Exit");
-		
-		JMenuItem cutAction = new JMenuItem("Cut");
-		JMenuItem copyAction = new JMenuItem("Copy");
-		JMenuItem pasteAction = new JMenuItem("Paste");
-
-		fileMenu.add(newAction);
-		fileMenu.add(openAction);
-		fileMenu.add(saveAction);
-		fileMenu.add(saveAsAction);
-		fileMenu.add(closeAction);
-		
-		editMenu.add(cutAction);
-		editMenu.add(copyAction);
-		editMenu.add(pasteAction);
-
-		newAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { JOptionPane.showMessageDialog(newAction, "New!");}});
-		
-		openAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(openAction, "Open!");}});
-		
-		saveAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(saveAction, "Save!");}});
-		
-		saveAsAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(saveAsAction, "Save As!");}});
-		
-		closeAction.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {System.exit(0);
-				
-			}
-		});
-
 	}
 
 }
