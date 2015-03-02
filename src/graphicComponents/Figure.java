@@ -8,7 +8,7 @@ public abstract class Figure implements Drawable {
 	private boolean isSelected;
 	
 	public Figure() {
-		this(Color.BLACK);
+		this(Color.white);
 	}
 	
 	public Figure(Color c) {

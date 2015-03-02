@@ -17,7 +17,10 @@ public class SymbolBar extends JPanel {
 	}
 	
 	private void drawButtons() {
-		for (JButton b : symbolButtonList)
+		for (JButton b : symbolButtonList) {
+
 			add(b);
+		}
+			
 	}
 }
