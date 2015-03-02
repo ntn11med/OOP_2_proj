@@ -1,12 +1,15 @@
 package ui.mainFrame;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import figureComponenets.MouseInteraction;
@@ -72,11 +75,33 @@ public class MainFrame extends JFrame {
 
 		JMenuItem newAction = new JMenuItem("New");
 		JMenuItem openAction = new JMenuItem("Open");
+		JMenuItem saveAction = new JMenuItem("Save");
+		JMenuItem saveAsAction = new JMenuItem("Save As");
 		JMenuItem closeAction = new JMenuItem("Exit");
 
 		fileMenu.add(newAction);
 		fileMenu.add(openAction);
+		fileMenu.add(saveAction);
+		fileMenu.add(saveAsAction);
 		fileMenu.add(closeAction);
+
+		newAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { JOptionPane.showMessageDialog(newAction, "New!");}});
+		
+		openAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(openAction, "Open!");}});
+		
+		saveAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(saveAction, "Save!");}});
+		
+		saveAsAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {JOptionPane.showMessageDialog(saveAsAction, "Save As!");}});
+		
+		closeAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {System.exit(0);
+				
+			}
+		});
 
 	}
 
