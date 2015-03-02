@@ -1,9 +1,14 @@
 package ui.mainFrame;
-import java.awt.BorderLayout;
 
+import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import figureComponenets.FigureList;
+import figureComponenets.FigureViewer;
+import graphicComponents.Circle;
+import graphicComponents.Rectangle;
+import ui.symbolBar.SymbolBar;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -24,12 +29,11 @@ public class MainFrame extends JFrame {
 
 	private void setBorderLayout() {
 		JPanel panel = new JPanel();
-		FigureList figureList = new FigureList();
 		//Adding figures to panel
-		figureList.add(new Cirkle(100, 100, 50));
-		figureList.add(new Cirkle(200, 200, 25));
-		figureList.add(new Cirkle(300, 300, 12));
-		figureList.add(new Cirkle(400, 400, 8));
+		figureList.add(new Circle(100, 100, 50));
+		figureList.add(new Circle(200, 200, 25));
+		figureList.add(new Circle(300, 300, 12));
+		figureList.add(new Circle(400, 400, 8));
 		figureList.add(new Rectangle(500, 500, 100, 100));
 		figureList.add(new Rectangle(650, 650, 50, 50));
 		figureList.add(new Rectangle(750, 750, 25, 25));

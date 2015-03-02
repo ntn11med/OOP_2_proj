@@ -1,9 +1,10 @@
 package figureComponenets;
+
+import graphicComponents.Figure;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JPanel;
 
 public class FigureViewer extends JPanel implements Observer {

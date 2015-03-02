@@ -1,4 +1,6 @@
 package figureComponenets;
+
+import graphicComponents.Figure;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Observable;
@@ -26,5 +28,4 @@ public class FigureList extends Observable implements Iterable<Figure>, Observer
 		setChanged();
 		notifyObservers(); //then pass it along
 	}
-
 }
