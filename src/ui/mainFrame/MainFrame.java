@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import figureComponenets.MouseInteraction;
@@ -28,13 +31,15 @@ public class MainFrame extends JFrame {
 
 	private void setGUI() {
 		setSize(1000, 1000);
-		//setLayout(new BorderLayout());
+		// setLayout(new BorderLayout());
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
 	private void setBorderLayout() {
 		JPanel panel = new JPanel();
-		//Adding figures to panel
+		setMenuBar();
+
+		// Adding figures to panel
 		figureList.add(new Circle(100, 100, 50));
 		figureList.add(new Circle(200, 200, 25));
 		figureList.add(new Circle(300, 300, 12));
@@ -46,15 +51,33 @@ public class MainFrame extends JFrame {
 		figureList.add(new ClassComponent(150, 150, 50, 100));
 		BorderLayout borderLayout = new BorderLayout();
 		panel.setLayout(borderLayout);
-		panel.add(figureViewer,BorderLayout.CENTER);
+		panel.add(figureViewer, BorderLayout.CENTER);
 		panel.add(new JButton("knapp"), BorderLayout.WEST);
 		panel.add(new JButton("knapp"), BorderLayout.EAST);
-		panel.add(new SymbolBar(),BorderLayout.NORTH);
+		panel.add(new SymbolBar(), BorderLayout.NORTH);
 		panel.add(new PropertiesBar(), BorderLayout.SOUTH);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
+	}
+
+	private void setMenuBar() {
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		JMenu fileMenu = new JMenu("File");
+		JMenu editMenu = new JMenu("Edit");
+		menuBar.add(fileMenu);
+		menuBar.add(editMenu);
+
+		JMenuItem newAction = new JMenuItem("New");
+		JMenuItem openAction = new JMenuItem("Open");
+		JMenuItem closeAction = new JMenuItem("Exit");
+
+		fileMenu.add(newAction);
+		fileMenu.add(openAction);
+		fileMenu.add(closeAction);
+
 	}
 
 }
