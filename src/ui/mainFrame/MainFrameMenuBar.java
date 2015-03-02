@@ -72,13 +72,29 @@ public class MainFrameMenuBar {
 	}
 
 	private void addEditMenuItems() {
+		JMenuItem redoAction = new JMenuItem("Redo");
+		JMenuItem undoAction = new JMenuItem("Undo");
 		JMenuItem cutAction = new JMenuItem("Cut");
 		JMenuItem copyAction = new JMenuItem("Copy");
 		JMenuItem pasteAction = new JMenuItem("Paste");
-
+		
+		editMenu.add(redoAction);
+		editMenu.add(undoAction);
 		editMenu.add(cutAction);
 		editMenu.add(copyAction);
 		editMenu.add(pasteAction);
+		
+		redoAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(cutAction, "Redo!");
+			}
+		});
+		
+		undoAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(cutAction, "Undo!");
+			}
+		});
 
 		cutAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
