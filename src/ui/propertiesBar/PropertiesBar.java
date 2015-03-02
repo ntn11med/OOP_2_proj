@@ -25,18 +25,17 @@ public class PropertiesBar extends JPanel {
 	}
 	
 	private void setBounds() {
-		lblName.setBounds(10, 11, 150, 15);
-		lblType.setBounds(10, 68, 150, 15);
-		tbClassName.setBounds(10, 37, 150, 20);
-		rdbtnInterface.setBounds(10, 90, 150, 23);
-		rdbtnAbstractClass.setBounds(10, 116, 150, 23);
-		rdbtnClass.setBounds(10, 142, 150, 23);
-		btnUpdate.setBounds(10, 172, 89, 23);
+		lblName.setBounds(10, 10, 150, 15);
+		lblType.setBounds(10, 70, 150, 15);
+		tbClassName.setBounds(10, 40, 150, 20);
+		rdbtnInterface.setBounds(10, 90, 150, 25);
+		rdbtnAbstractClass.setBounds(10, 120, 150, 25);
+		rdbtnClass.setBounds(10, 145, 150, 25);
+		btnUpdate.setBounds(10, 175, 90, 25);
 	}
 	
 	private void addCtrls() {
 		add(lblName);
-		
 		add(tbClassName);
 		add(lblType);
 		buttonGroup.add(rdbtnInterface);
