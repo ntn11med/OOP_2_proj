@@ -78,12 +78,20 @@ public class MainFrame extends JFrame {
 		JMenuItem saveAction = new JMenuItem("Save");
 		JMenuItem saveAsAction = new JMenuItem("Save As");
 		JMenuItem closeAction = new JMenuItem("Exit");
+		
+		JMenuItem cutAction = new JMenuItem("Cut");
+		JMenuItem copyAction = new JMenuItem("Copy");
+		JMenuItem pasteAction = new JMenuItem("Paste");
 
 		fileMenu.add(newAction);
 		fileMenu.add(openAction);
 		fileMenu.add(saveAction);
 		fileMenu.add(saveAsAction);
 		fileMenu.add(closeAction);
+		
+		editMenu.add(cutAction);
+		editMenu.add(copyAction);
+		editMenu.add(pasteAction);
 
 		newAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { JOptionPane.showMessageDialog(newAction, "New!");}});
