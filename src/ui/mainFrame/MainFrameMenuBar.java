@@ -16,7 +16,7 @@ public class MainFrameMenuBar {
 		setMenuBar();
 	}
 
-	public JMenuBar getMenu(){
+	public JMenuBar getMenu() {
 		return menuBar;
 	}
 
@@ -39,7 +39,7 @@ public class MainFrameMenuBar {
 		fileMenu.add(saveAction);
 		fileMenu.add(saveAsAction);
 		fileMenu.add(closeAction);
-		
+
 		newAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(newAction, "New!");
@@ -67,11 +67,10 @@ public class MainFrameMenuBar {
 		closeAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-
 			}
 		});
 	}
-	
+
 	private void addEditMenuItems() {
 		JMenuItem cutAction = new JMenuItem("Cut");
 		JMenuItem copyAction = new JMenuItem("Copy");
@@ -80,5 +79,23 @@ public class MainFrameMenuBar {
 		editMenu.add(cutAction);
 		editMenu.add(copyAction);
 		editMenu.add(pasteAction);
+
+		cutAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(cutAction, "Cut!");
+			}
+		});
+
+		copyAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(copyAction, "Copy!");
+			}
+		});
+
+		pasteAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(pasteAction, "Paste!");
+			}
+		});
 	}
 }
