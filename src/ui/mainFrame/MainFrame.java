@@ -9,6 +9,7 @@ import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
 import graphicComponents.Circle;
 import graphicComponents.ClassComponent;
+import graphicComponents.Connector;
 import graphicComponents.Rectangle;
 import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
@@ -48,6 +49,7 @@ public class MainFrame extends JFrame {
 		figureList.add(new Rectangle(750, 750, 25, 25));
 		figureList.add(new Rectangle(825, 825, 12, 12));
 		figureList.add(new ClassComponent(150, 150));
+		figureList.add(new Connector(120, 120, 70, 1));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
