@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 public class ClassComponent extends Point {
 	private int headHeight;
-	private int attrubeHeight;
+	private int attributeHeight;
 	private int methodHeight;
 	private int width;
 	private int dx, dy;
@@ -19,7 +19,7 @@ public class ClassComponent extends Point {
 		this.dx = x;
 		this.dy = y;
 		this.headHeight = height;
-		this.attrubeHeight = height;
+		this.attributeHeight = height;
 		this.methodHeight = height;
 		this.width = width;
 	}
@@ -27,17 +27,17 @@ public class ClassComponent extends Point {
 	@Override
 	protected void drawSpecific(Graphics g) {
 		g.drawRect(dx, dy, width, headHeight);
-		g.drawRect(dx, dy+headHeight, width, attrubeHeight);
-		g.drawRect(dx, dy+headHeight+attrubeHeight, width, methodHeight);
+		g.drawRect(dx, dy+headHeight, width, attributeHeight);
+		g.drawRect(dx, dy+headHeight+attributeHeight, width, methodHeight);
 		if (isSelected) {
-			Outline ol = new Outline(new Point(dx-5, dy-5), width+10, headHeight+attrubeHeight+methodHeight+10);
+			Outline ol = new Outline(new Point(dx-5, dy-5), width+10, headHeight+attributeHeight+methodHeight+10);
 			ol.drawSpecific(g);
 		}
 	}
 	
 	@Override
 	public boolean encloses(int x, int y) {
-		return x>dx && x<dx+width && y>dy && y<dy+headHeight+attrubeHeight+methodHeight;
+		return x>dx && x<dx+width && y>dy && y<dy+headHeight+attributeHeight+methodHeight;
 	}
 	
 	@Override

@@ -3,16 +3,11 @@ package ui.mainFrame;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
-import graphicComponents.Circle;
-import graphicComponents.ClassComponent;
 import graphicComponents.ComponentFactory;
 import graphicComponents.ComponentFactorySingleton;
-import graphicComponents.Connector;
-import graphicComponents.Rectangle;
 import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
 import ui.propertiesBar.PropertiesBar;
@@ -28,8 +23,7 @@ public class MainFrame extends JFrame {
 	private ComponentFactory cf;
 
 	public MainFrame() {
-		 cf = ComponentFactorySingleton.getInstance();
-		
+		cf = ComponentFactorySingleton.getInstance();
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());
@@ -47,17 +41,6 @@ public class MainFrame extends JFrame {
 		// Adding figures to panel
 		figureList.add(cf.getComponent("Class"));
 		figureList.add(ComponentFactorySingleton.getInstance().getComponent("Connector"));
-		figureList.add(new Circle(100, 100, 50));
-		figureList.add(new Circle(200, 200, 25));
-		figureList.add(new Circle(300, 300, 12));
-		figureList.add(new Circle(400, 400, 8));
-		figureList.add(new Rectangle(500, 500, 100, 100));
-		figureList.add(new Rectangle(650, 650, 50, 50));
-		figureList.add(new Rectangle(750, 750, 25, 25));
-		figureList.add(new Rectangle(825, 825, 12, 12));
-		figureList.add(new ClassComponent(150, 150));
-		figureList.add(new Connector(120, 120, 70, 0));
-		figureList.add(new Connector(120, 120, 0, 70));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
