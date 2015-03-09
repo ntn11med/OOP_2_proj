@@ -10,13 +10,17 @@ public class ClassComponent extends Point {
 	private int dx, dy;
 	private boolean isSelected;
 	
+	public ClassComponent(int x, int y) {
+		this(x, y, 30, 60);
+	}
+	
 	public ClassComponent(int x, int y, int height, int width) {
 		super(x, y);
 		this.dx = x;
 		this.dy = y;
 		this.headHeight = height;
-		this.attrubeHeight = 25;
-		this.methodHeight = 55;
+		this.attrubeHeight = height;
+		this.methodHeight = height;
 		this.width = width;
 	}
 	
