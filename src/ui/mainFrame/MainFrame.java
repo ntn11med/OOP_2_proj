@@ -49,7 +49,8 @@ public class MainFrame extends JFrame {
 		figureList.add(new Rectangle(750, 750, 25, 25));
 		figureList.add(new Rectangle(825, 825, 12, 12));
 		figureList.add(new ClassComponent(150, 150));
-		figureList.add(new Connector(120, 120, 70, 1));
+		figureList.add(new Connector(120, 120, 70, 0));
+		figureList.add(new Connector(120, 120, 0, 70));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);

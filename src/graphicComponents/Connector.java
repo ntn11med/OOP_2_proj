@@ -18,7 +18,7 @@ public class Connector extends Point {
 	
 	@Override
 	protected void drawSpecific(Graphics g) {
-		g.drawLine(dx, dx+width, dy, dy+height);
+		g.drawLine(dx, dy, dx+width, dy+height);
 		if (isSelected) {
 			Outline ol = new Outline(new Point(dx-5, dy-5), width+10, height+10);
 			ol.drawSpecific(g);
