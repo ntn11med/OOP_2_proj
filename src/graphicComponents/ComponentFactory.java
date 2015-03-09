@@ -6,7 +6,6 @@ import java.util.Map;
 public class ComponentFactory {
 	private Map<String, Point> factoryMap;
 	
-	
 	public ComponentFactory() {
 		this.factoryMap = new HashMap<String, Point>();
 		factoryMap.put("Class", new ClassComponent(0, 0));

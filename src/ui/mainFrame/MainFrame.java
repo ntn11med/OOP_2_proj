@@ -9,6 +9,7 @@ import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
 import graphicComponents.Circle;
 import graphicComponents.ClassComponent;
+import graphicComponents.ComponentFactory;
 import graphicComponents.ComponentFactorySingleton;
 import graphicComponents.Connector;
 import graphicComponents.Rectangle;
@@ -24,9 +25,10 @@ public class MainFrame extends JFrame {
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
 	private SymbolBar sb = new SymbolBar();
 	private PropertiesBar pb = new PropertiesBar();
+	private ComponentFactory cf;
 
 	public MainFrame() {
-		//ComponentFactorySingleton cfs = new ComponentFactorySingleton();
+		 cf = ComponentFactorySingleton.getInstance();
 		
 		setGUI();
 		setBorderLayout();
@@ -43,7 +45,7 @@ public class MainFrame extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		// Adding figures to panel
-		figureList.add(ComponentFactorySingleton.getInstance().getComponent("Class"));
+		figureList.add(cf.getComponent("Class"));
 		figureList.add(ComponentFactorySingleton.getInstance().getComponent("Connector"));
 		figureList.add(new Circle(100, 100, 50));
 		figureList.add(new Circle(200, 200, 25));
