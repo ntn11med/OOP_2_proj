@@ -1,5 +1,5 @@
 package model;
 
 public interface ClassState {
-	public void getState();
+	public String getRole();
 }

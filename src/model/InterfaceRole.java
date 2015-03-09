@@ -1,6 +1,6 @@
 package model;
 
-public class ClassRole implements ClassState {
+public class InterfaceRole implements ClassState {
 
 	@Override
 	public String getRole() {
