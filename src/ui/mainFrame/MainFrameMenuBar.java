@@ -32,12 +32,14 @@ public class MainFrameMenuBar {
 		JMenuItem openAction = new JMenuItem("Open");
 		JMenuItem saveAction = new JMenuItem("Save");
 		JMenuItem saveAsAction = new JMenuItem("Save As");
+		JMenuItem printAction = new JMenuItem("Print");
 		JMenuItem closeAction = new JMenuItem("Exit");
 
 		fileMenu.add(newAction);
 		fileMenu.add(openAction);
 		fileMenu.add(saveAction);
 		fileMenu.add(saveAsAction);
+		fileMenu.add(printAction);
 		fileMenu.add(closeAction);
 
 		newAction.addActionListener(new ActionListener() {
@@ -61,6 +63,12 @@ public class MainFrameMenuBar {
 		saveAsAction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(saveAsAction, "Save As!");
+			}
+		});
+		
+		printAction.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(printAction, "print!");
 			}
 		});
 
