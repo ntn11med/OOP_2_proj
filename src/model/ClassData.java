@@ -10,10 +10,11 @@ public class ClassData {
 	private ClassState role;
 	
 	public ClassData() {
-		this(new ClassRole());
+		this("Class");
 	}
 	
-	public ClassData(ClassState cs) {
-		role = cs;
+	public ClassData(String cs) {
+		RoleFactory rf = new RoleFactory();
+		role = rf.getRole(cs);
 	}
 }

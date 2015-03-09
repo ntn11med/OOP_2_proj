@@ -10,5 +10,8 @@ public class RoleFactory {
 		this.roleMap = new HashMap<String, ClassState>();
 		roleMap.put("Class", new ClassRole());
 	}
-
+	
+	public ClassState getRole(String role) {
+		return roleMap.get(role);
+	}
 }
