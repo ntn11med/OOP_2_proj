@@ -27,7 +27,7 @@ public class Connector extends Point {
 	
 	@Override
 	public boolean encloses(int x, int y) {
-		return x>dx-3 && x<dx+width+3 && y>dy-3 && y<dy+height+3;
+		return x>dx-5 && x<dx+width+5 && y>dy-5 && y<dy+height+5;
 	}
 	
 	@Override
