@@ -9,11 +9,16 @@ public class UmlController {
 		this.classModel = classModel;
 	}
 
-	private void addComponent() {
+	public UmlController() {
+		this(new ClassModel());
+	}
+
+	public void addComponent() {
 		classModel.addComponent();
 
 	}
-	private void removeComponent(int index){
+
+	public void removeComponent(int index) {
 		classModel.removeComponent(index);
 	}
 
