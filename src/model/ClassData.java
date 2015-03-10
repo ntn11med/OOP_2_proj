@@ -26,20 +26,12 @@ public class ClassData {
 		attributes.remove(index);
 	}
 	
-	public void removeAttribute(String attr) {
-		attributes.remove(attr);
-	}
-	
 	public void addMethod(String method) {
 		methods.add(method);
 	}
 	
 	public void removeMethod(int index) {
 		methods.remove(index);
-	}
-	
-	public void removeMethod(String method) {
-		methods.remove(method);
 	}
 	
 	public void setName(String name) {
@@ -73,10 +65,6 @@ public class ClassData {
 	
 	public void removeAssociation(int index) {
 		asssociations.remove(index);
-	}
-	
-	public void removeAssociation(String assoc) {
-		asssociations.remove(assoc);
 	}
 	
 	public List<String> getAssociations() {
