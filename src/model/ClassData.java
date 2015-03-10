@@ -8,6 +8,7 @@ public class ClassData {
 	private List<String> attributes = new LinkedList<String>();
 	private List<String> methods = new LinkedList<String>();
 	private ClassState role;
+	private List<String> asssociations = new LinkedList<String>();
 	
 	public ClassData() {
 		this("Class");
@@ -64,5 +65,21 @@ public class ClassData {
 
 	public ClassState getRole() {
 		return role;
+	}
+	
+	public void addAssociation(String input) {
+		asssociations.add(input);
+	}
+	
+	public void removeAssociation(int index) {
+		asssociations.remove(index);
+	}
+	
+	public void removeAssociation(String assoc) {
+		asssociations.remove(assoc);
+	}
+	
+	public List<String> getAssociations() {
+		return asssociations;
 	}
 }
