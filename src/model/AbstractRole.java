@@ -6,5 +6,4 @@ public class AbstractRole implements ClassState {
 	public String getRole() {
 		return "Abstract";
 	}
-
 }

@@ -6,5 +6,4 @@ public class InterfaceRole implements ClassState {
 	public String getRole() {
 		return "Interface";
 	}
-
 }

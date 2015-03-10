@@ -6,5 +6,4 @@ public class ClassRole implements ClassState {
 	public String getRole() {
 		return "Class";
 	}
-
 }
