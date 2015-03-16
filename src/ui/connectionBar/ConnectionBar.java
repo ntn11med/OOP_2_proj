@@ -15,12 +15,14 @@ public class ConnectionBar extends JPanel {
 	private JButton btnRemove = new JButton("Remove");
 	private JButton btnAdd = new JButton("Add");
 	private JLabel lblConnected = new JLabel("Current connections");
-	private JLabel lblAllObjectsTo = new JLabel("All objects to connect to");
+	private JLabel lblAllObjects = new JLabel("All objects to connect to");
 	
 	public ConnectionBar() {
 		setLayout(null);
 		setBounds();
 		addCtrls();
+		ConnectionBarListener listener = new ConnectionBarListener(this);
+		listener.addListeners();
 	}
 	
 	private void setBounds() {
@@ -28,7 +30,7 @@ public class ConnectionBar extends JPanel {
 		btnRemove.setBounds(10, 300, 89, 23);
 		btnAdd.setBounds(201, 300, 89, 23);
 		lblConnected.setBounds(10, 11, 280, 14);
-		lblAllObjectsTo.setBounds(10, 334, 280, 14);
+		lblAllObjects.setBounds(10, 334, 280, 14);
 		objectScroll.setBounds(10, 359, 280, 380);
 	}
 	
@@ -37,7 +39,23 @@ public class ConnectionBar extends JPanel {
 		add(btnRemove);
 		add(btnAdd);
 		add(lblConnected);
-		add(lblAllObjectsTo);
+		add(lblAllObjects);
 		add(objectScroll);
+	}
+
+	public JList<String> getListConnected() {
+		return listConnected;
+	}
+
+	public JList<String> getListObjects() {
+		return listObjects;
+	}
+
+	public JButton getBtnRemove() {
+		return btnRemove;
+	}
+
+	public JButton getBtnAdd() {
+		return btnAdd;
 	}
 }
