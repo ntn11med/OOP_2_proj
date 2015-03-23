@@ -57,7 +57,7 @@ public class ClassData {
 	public void setRole(String role) {
 		RoleFactory rf = new RoleFactory();
 		this.role = rf.getRole(role);
-		checkSize(this.role.getRole());
+		checkSize(this.role.toString());
 	}
 
 	public ClassState getRole() {
