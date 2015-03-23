@@ -8,7 +8,8 @@ public class ClassData {
 	private List<String> attributes = new LinkedList<String>();
 	private List<String> methods = new LinkedList<String>();
 	private ClassState role;
-	private List<String> asssociations = new LinkedList<String>();
+	private List<String> associations = new LinkedList<String>();
+	private int maxLineLenght = 0;
 	
 	public ClassData() {
 		this("Class");
@@ -19,6 +20,7 @@ public class ClassData {
 	}
 	
 	public void addAttribute(String attr) {
+		checkSize(attr);
 		attributes.add(attr);
 	}
 	
@@ -27,6 +29,7 @@ public class ClassData {
 	}
 	
 	public void addMethod(String method) {
+		checkSize(method);
 		methods.add(method);
 	}
 	
@@ -35,6 +38,7 @@ public class ClassData {
 	}
 	
 	public void setName(String name) {
+		checkSize(name);
 		this.name = name;
 	}
 
@@ -53,6 +57,7 @@ public class ClassData {
 	public void setRole(String role) {
 		RoleFactory rf = new RoleFactory();
 		this.role = rf.getRole(role);
+		checkSize(this.role.getRole());
 	}
 
 	public ClassState getRole() {
@@ -60,14 +65,23 @@ public class ClassData {
 	}
 	
 	public void addAssociation(String input) {
-		asssociations.add(input);
+		associations.add(input);
 	}
 	
 	public void removeAssociation(int index) {
-		asssociations.remove(index);
+		associations.remove(index);
 	}
 	
 	public List<String> getAssociations() {
-		return asssociations;
+		return associations;
+	}
+	
+	public int getMaxLineLenght() {
+		return maxLineLenght;
+	}
+	
+	private void checkSize(String input) {
+		if (input.length() > maxLineLenght)
+			maxLineLenght = input.length(); 
 	}
 }
