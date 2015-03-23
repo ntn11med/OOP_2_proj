@@ -6,4 +6,9 @@ public class InterfaceRole implements ClassState {
 	public String getRole() {
 		return "Interface";
 	}
+	
+	@Override
+	public String toString() {
+		return "<< " + getRole() + " >>";
+	}
 }
