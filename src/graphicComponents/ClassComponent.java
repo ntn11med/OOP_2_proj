@@ -1,6 +1,7 @@
 package graphicComponents;
 
 import java.awt.Graphics;
+import model.ClassData;
 
 public class ClassComponent extends Point {
 	private int headHeight;
@@ -9,6 +10,10 @@ public class ClassComponent extends Point {
 	private int width;
 	private int dx, dy;
 	private boolean isSelected;
+	private ClassData cd;
+	private final int HEAD_HEIGHT = 30;
+	private final int FONT_HEIGHT = 8;
+	private final int FONT_WIDTH = 5;
 	
 	public ClassComponent(int x, int y) {
 		this(x, y, 30, 60);
@@ -18,10 +23,21 @@ public class ClassComponent extends Point {
 		super(x, y);
 		this.dx = x;
 		this.dy = y;
-		this.headHeight = height;
+		this.headHeight = HEAD_HEIGHT;
 		this.attributeHeight = height;
 		this.methodHeight = height;
 		this.width = width;
+	}
+	
+	public ClassComponent(int x, int y, ClassData data) {
+		super(x, y);
+		this.dx = x;
+		this.dy = y;
+		this.headHeight = HEAD_HEIGHT;
+		this.attributeHeight = data.getAttributes().size() * FONT_HEIGHT;
+		this.methodHeight = data.getMethods().size() * FONT_HEIGHT;
+		this.width = data.getMaxLineLenght() * FONT_WIDTH;
+		cd = data;
 	}
 	
 	@Override
