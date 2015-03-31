@@ -27,5 +27,6 @@ public class SymbolBar extends JPanel {
 	
 	private void addClass() {
 		list.add(new ClassComponent(0, 0));
+		list.update(null, null);
 	}
 }
