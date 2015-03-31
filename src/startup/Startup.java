@@ -1,8 +1,7 @@
 package startup;
 
 import javax.swing.SwingUtilities;
-
-import ui.mainFrame.MainFrame;
+import controllers.UmlController;
 
 public class Startup {
 
@@ -10,7 +9,7 @@ public class Startup {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				new MainFrame();
+				new UmlController();
 			}
 		});
 	}
