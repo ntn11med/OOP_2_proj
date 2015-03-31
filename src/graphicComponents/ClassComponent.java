@@ -33,11 +33,19 @@ public class ClassComponent extends Point {
 		super(x, y);
 		this.dx = x;
 		this.dy = y;
+		calcuateBorders(data);
+	}
+	
+	private void calcuateBorders(ClassData data) {
 		this.headHeight = HEAD_HEIGHT;
 		this.attributeHeight = data.getAttributes().size() * FONT_HEIGHT;
 		this.methodHeight = data.getMethods().size() * FONT_HEIGHT;
 		this.width = data.getMaxLineLenght() * FONT_WIDTH;
 		cd = data;
+	}
+	
+	public void updateData(ClassData data) {
+		calcuateBorders(data);
 	}
 	
 	@Override
