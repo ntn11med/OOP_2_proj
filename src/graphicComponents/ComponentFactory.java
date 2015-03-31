@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ComponentFactory {
-	private Map<String, Point> factoryMap;
+	private Map<String, ClassComponent> factoryMap;
 	
 	public ComponentFactory() {
-		this.factoryMap = new HashMap<String, Point>();
+		this.factoryMap = new HashMap<String, ClassComponent>();
 		factoryMap.put("Class", new ClassComponent(0, 0));
-		factoryMap.put("Connector", new Connector(5, 5, 100, 0));
+		//factoryMap.put("Connector", new Connector(5, 5, 100, 0));
 	}
 	
-	public Point getComponent(String input) {
+	public ClassComponent getComponent(String input) {
 		return factoryMap.get(input);
 	}
 }

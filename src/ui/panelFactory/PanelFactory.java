@@ -18,7 +18,7 @@ public class PanelFactory {
 		panelMap.put("PropertiesBar", new PropertiesBar());
 		panelMap.put("AttributeBar", new AttributeBar());
 		panelMap.put("ConnectionBar", new ConnectionBar());
-		panelMap.put("SymbolBar", new SymbolBar());
+		//panelMap.put("SymbolBar", new SymbolBar());
 	}
 	
 	public JPanel getPanel(String input) {

@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
 	private FigureList figureList = new FigureList();
 	private FigureViewer figureViewer = new FigureViewer(figureList);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
-	private SymbolBar sb = new SymbolBar();
+	private SymbolBar sb = new SymbolBar(figureList);
 	private PropertiesBar pb = new PropertiesBar();
 	private ComponentFactory cf;
 
@@ -40,7 +40,7 @@ public class MainFrame extends JFrame {
 		panel.setLayout(null);
 		// Adding figures to panel
 		figureList.add(cf.getComponent("Class"));
-		figureList.add(cf.getComponent("Connector"));
+		//figureList.add(cf.getComponent("Connector"));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
