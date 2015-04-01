@@ -38,10 +38,6 @@ public class MainFrame extends JFrame {
 	private void setBorderLayout() {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		// Adding figures to panel
-		figureList.add(ComponentFactorySingleton.getInstance().getComponent("Class"));
-		//figureList.add(cf.getComponent("Connector"));
-		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
 		jsp.setBounds(200, 40, 1500, 1000);
@@ -55,5 +51,4 @@ public class MainFrame extends JFrame {
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
 	}
-
 }
