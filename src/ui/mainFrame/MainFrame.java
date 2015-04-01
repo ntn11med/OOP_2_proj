@@ -6,7 +6,6 @@ import javax.swing.JScrollPane;
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
-import graphicComponents.ComponentFactory;
 import graphicComponents.ComponentFactorySingleton;
 import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
@@ -20,13 +19,14 @@ public class MainFrame extends JFrame {
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
 	private SymbolBar sb = new SymbolBar(figureList);
 	private PropertiesBar pb = new PropertiesBar();
-	private ComponentFactory cf;
 
 	public MainFrame() {
-		cf = ComponentFactorySingleton.getInstance();
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());
+	}
+	
+	public void showFrame() {
 		setVisible(true);
 	}
 
@@ -39,7 +39,7 @@ public class MainFrame extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		// Adding figures to panel
-		figureList.add(cf.getComponent("Class"));
+		figureList.add(ComponentFactorySingleton.getInstance().getComponent("Class"));
 		//figureList.add(cf.getComponent("Connector"));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
