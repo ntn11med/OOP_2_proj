@@ -11,8 +11,6 @@ import graphicComponents.ComponentFactory;
 import graphicComponents.ComponentFactorySingleton;
 import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
-import ui.propertiesBar.PropertiesBar;
-import ui.symbolBar.SymbolBar;
 import ui.tabbedPane.TabbedPane;
 
 public class MainFrame extends JFrame {
@@ -21,8 +19,8 @@ public class MainFrame extends JFrame {
 	private FigureViewer figureViewer = new FigureViewer(figureList);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
 	private TabbedPane tp = new TabbedPane();
-	//private SymbolBar sb = new SymbolBar(figureList);
-	//private PropertiesBar pb = new PropertiesBar();
+	// private SymbolBar sb = new SymbolBar(figureList);
+	// private PropertiesBar pb = new PropertiesBar();
 	private ComponentFactory cf;
 
 	public MainFrame() {
@@ -30,6 +28,10 @@ public class MainFrame extends JFrame {
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());
+
+	}
+
+	public void showFrame() {
 		setVisible(true);
 	}
 
@@ -43,7 +45,7 @@ public class MainFrame extends JFrame {
 		panel.setLayout(null);
 		// Adding figures to panel
 		figureList.add(cf.getComponent("Class"));
-		//figureList.add(cf.getComponent("Connector"));
+		// figureList.add(cf.getComponent("Connector"));
 		figureList.add(new Text(155, 155, "Klass namn"));
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
@@ -51,10 +53,10 @@ public class MainFrame extends JFrame {
 		panel.add(jsp);
 		tp.setBounds(0, 0, 199, 914);
 		panel.add(tp);
-//		sb.setBounds(300, 0, 300, 40);
-//		panel.add(sb);
-//		pb.setBounds(0, 0, 200, 200);
-//		panel.add(pb);
+		// sb.setBounds(300, 0, 300, 40);
+		// panel.add(sb);
+		// pb.setBounds(0, 0, 200, 200);
+		// panel.add(pb);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
