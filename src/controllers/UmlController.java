@@ -7,12 +7,12 @@ import model.Incrementor;
 public class UmlController {
 	private ClassModel classModel;
 	private MainFrame mf;
-	private Incrementor incr;
+	private Incrementor incr = new Incrementor();
 
 	public UmlController(ClassModel classModel) {
 		this.classModel = classModel;
-		this.mf = new MainFrame();
 		this.incr = new Incrementor();
+		this.mf = new MainFrame();
 		mf.showFrame();
 	}
 
@@ -21,7 +21,7 @@ public class UmlController {
 	}
 
 	public void addComponent() {
-		classModel.addComponent();
+		classModel.addComponent(incr);
 
 	}
 

@@ -5,9 +5,8 @@ import java.util.Map;
 
 public class ClassModel {
 	private Map<Integer, ClassData> modelMap = new HashMap<Integer, ClassData>();
-	private Incrementor incr = new Incrementor();
 	
-	public void addComponent() {
+	public void addComponent(Incrementor incr) {
 		modelMap.put(incr.getSerialNr(), new ClassData());
 	}
 	

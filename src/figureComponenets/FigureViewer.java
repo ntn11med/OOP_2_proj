@@ -39,7 +39,7 @@ public class FigureViewer extends JPanel implements Observer {
 			for (Figure figure : figureList)
 				figure.draw(g);
 		} else {
-			for (Map.Entry<String, Figure> entry : figureMap.entrySet())
+			for (Map.Entry<Integer, Figure> entry : figureMap.entrySet())
 				entry.getValue().draw(g);
 		}
 	}

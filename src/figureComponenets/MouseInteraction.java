@@ -47,7 +47,7 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 					selectedFigure = figure;
 		} else {
 			Figure fig;
-			for (Map.Entry<String, Figure> entry : map.entrySet()) {
+			for (Map.Entry<Integer, Figure> entry : map.entrySet()) {
 				fig = entry.getValue();
 				if (fig.encloses(e.getX(), e.getY()))
 					selectedFigure = fig;
@@ -78,7 +78,7 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 					selectedFigure = figure;
 		} else {
 			Figure fig;
-			for (Map.Entry<String, Figure> entry : map.entrySet()) {
+			for (Map.Entry<Integer, Figure> entry : map.entrySet()) {
 				fig = entry.getValue();
 				if (fig.encloses(e.getX(), e.getY()))
 					selectedFigure = fig;

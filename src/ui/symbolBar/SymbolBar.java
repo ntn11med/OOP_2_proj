@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import model.Incrementor;
 import figureComponenets.FigureList;
 import figureComponenets.FigureMap;
 import graphicComponents.ClassComponent;
@@ -16,19 +17,22 @@ public class SymbolBar extends JPanel {
 	private JButton btnConnector = new JButton("Connector");
 	private FigureList list;
 	private FigureMap map;
+	private Incrementor incr;
 	
 	public SymbolBar(FigureList list) {
 		add(btnClass);
 		add(btnConnector);
 		addListeners();
 		this.list = list;
+		this.incr = new Incrementor();
 	}
 	
-	public SymbolBar(FigureMap map) {
+	public SymbolBar(FigureMap map, Incrementor incr) {
 		add(btnClass);
 		add(btnConnector);
 		addListeners();
 		this.map = map;
+		this.incr = incr;
 	}
 	
 	private void addListeners() {
@@ -41,7 +45,7 @@ public class SymbolBar extends JPanel {
 			list.add(new ClassComponent(0, 0));
 			list.update(null, null);
 		} else {
-			map.add("01", new ClassComponent(0, 0));
+			map.add(incr.getSerialNr(), new ClassComponent(0, 0));
 			map.update(null, null);
 		}
 	}

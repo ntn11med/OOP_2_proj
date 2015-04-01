@@ -9,19 +9,19 @@ import java.util.Observer;
 import java.util.Set;
 
 public class FigureMap extends Observable implements Observer {
-	protected Map<String, Figure> figures = new HashMap<String, Figure>();
+	protected Map<Integer, Figure> figures = new HashMap<Integer, Figure>();
 	
-	public void add(String key, Figure figure) {
+	public void add(Integer key, Figure figure) {
 		figures.put(key, figure);
 		notifyObservers();
 	}
 
-	public void remove(String key) {
+	public void remove(Integer key) {
 		figures.remove(key);
 		notifyObservers();
 	}
 	
-	public Set<Map.Entry<String, Figure>> entrySet() {
+	public Set<Map.Entry<Integer, Figure>> entrySet() {
 		return figures.entrySet();
 	}
 
