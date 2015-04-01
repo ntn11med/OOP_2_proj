@@ -3,6 +3,7 @@ package ui.mainFrame;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
@@ -12,14 +13,16 @@ import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
 import ui.propertiesBar.PropertiesBar;
 import ui.symbolBar.SymbolBar;
+import ui.tabbedPane.TabbedPane;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private FigureList figureList = new FigureList();
 	private FigureViewer figureViewer = new FigureViewer(figureList);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
-	private SymbolBar sb = new SymbolBar(figureList);
-	private PropertiesBar pb = new PropertiesBar();
+	private TabbedPane tp = new TabbedPane();
+	//private SymbolBar sb = new SymbolBar(figureList);
+	//private PropertiesBar pb = new PropertiesBar();
 	private ComponentFactory cf;
 
 	public MainFrame() {
@@ -46,10 +49,12 @@ public class MainFrame extends JFrame {
 		JScrollPane jsp = new JScrollPane(figureViewer);
 		jsp.setBounds(200, 40, 1500, 1000);
 		panel.add(jsp);
-		sb.setBounds(300, 0, 300, 40);
-		panel.add(sb);
-		pb.setBounds(0, 0, 200, 200);
-		panel.add(pb);
+		tp.setBounds(0, 0, 199, 914);
+		panel.add(tp);
+//		sb.setBounds(300, 0, 300, 40);
+//		panel.add(sb);
+//		pb.setBounds(0, 0, 200, 200);
+//		panel.add(pb);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
