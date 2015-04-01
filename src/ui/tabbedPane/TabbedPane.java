@@ -1,6 +1,5 @@
 package ui.tabbedPane;
 
-import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
 import ui.attributeBar.AttributeBar;
