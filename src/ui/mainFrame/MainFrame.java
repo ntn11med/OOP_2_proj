@@ -3,11 +3,11 @@ package ui.mainFrame;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
+import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
-import graphicComponents.ComponentFactorySingleton;
-import graphicComponents.Text;
 import ui.mainFrame.MainFrameMenuBar;
 import ui.propertiesBar.PropertiesBar;
 import ui.symbolBar.SymbolBar;
@@ -15,9 +15,10 @@ import ui.symbolBar.SymbolBar;
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private FigureList figureList = new FigureList();
-	private FigureViewer figureViewer = new FigureViewer(figureList);
+	private FigureMap figureMap = new FigureMap();
+	private FigureViewer figureViewer = new FigureViewer(figureMap);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
-	private SymbolBar sb = new SymbolBar(figureList);
+	private SymbolBar sb = new SymbolBar(figureMap);
 	private PropertiesBar pb = new PropertiesBar();
 
 	public MainFrame() {
@@ -46,7 +47,7 @@ public class MainFrame extends JFrame {
 		panel.add(sb);
 		pb.setBounds(0, 0, 200, 200);
 		panel.add(pb);
-		MouseInteraction mouseInteraction = new MouseInteraction(figureList);
+		MouseInteraction mouseInteraction = new MouseInteraction(figureMap);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
