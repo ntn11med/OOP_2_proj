@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import model.Incrementor;
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
 import figureComponenets.FigureList;
@@ -22,13 +23,14 @@ public class MainFrame extends JFrame {
 	private FigureMap figureMap = new FigureMap();
 	private FigureViewer figureViewer = new FigureViewer(figureMap);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
-	private SymbolBar sb = new SymbolBar(figureMap);
+	private SymbolBar sb; 
 	private PropertiesBar pb = new PropertiesBar();
 	private TabbedPane tp = new TabbedPane();
 	private ComponentFactory cf;
 
-	public MainFrame() {
+	public MainFrame(Incrementor incr) {
 		cf = ComponentFactorySingleton.getInstance();
+		sb = new SymbolBar(figureMap, incr);
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());

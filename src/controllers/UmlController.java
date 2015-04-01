@@ -12,7 +12,7 @@ public class UmlController {
 	public UmlController(ClassModel classModel) {
 		this.classModel = classModel;
 		this.incr = new Incrementor();
-		this.mf = new MainFrame();
+		this.mf = new MainFrame(incr);
 		mf.showFrame();
 	}
 
