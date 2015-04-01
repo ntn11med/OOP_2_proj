@@ -23,6 +23,11 @@ public class FigureMap extends Observable implements Observer {
 	public Set<Map.Entry<Integer, Figure>> entrySet() {
 		return figures.entrySet();
 	}
+	
+	@Override
+	public void addObserver(Observer o) {
+		
+	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {

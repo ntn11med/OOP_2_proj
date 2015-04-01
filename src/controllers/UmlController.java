@@ -1,10 +1,13 @@
 package controllers;
 
+import java.util.Observable;
+import java.util.Observer;
+
 import ui.mainFrame.MainFrame;
 import model.ClassModel;
 import model.Incrementor;
 
-public class UmlController {
+public class UmlController implements Observer {
 	private ClassModel classModel;
 	private MainFrame mf;
 	private Incrementor incr = new Incrementor();
@@ -27,6 +30,12 @@ public class UmlController {
 
 	public void removeComponent(int index) {
 		classModel.removeComponent(index);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
