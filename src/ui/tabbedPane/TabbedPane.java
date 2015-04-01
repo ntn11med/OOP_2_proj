@@ -13,6 +13,7 @@ public class TabbedPane extends JTabbedPane {
 	public TabbedPane() {
 		JTabbedPane jtp = new JTabbedPane();
 		makeTabs(jtp);
+		setVisible(true);
 	}
 
 	private void makeTabs(JTabbedPane jtp) {

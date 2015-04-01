@@ -55,7 +55,7 @@ public class MainFrame extends JFrame {
 		panel.add(sb);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureMap);
 
-		tp.setBounds(0, 0, 199, 914);
+		tp.setBounds(0, 0, 200, 914);
 		panel.add(tp);
 		// sb.setBounds(300, 0, 300, 40);
 		// panel.add(sb);
