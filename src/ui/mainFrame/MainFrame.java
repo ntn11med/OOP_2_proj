@@ -68,7 +68,7 @@ public class MainFrame extends JFrame {
 		tabPanel.setBounds(0, 0, 200, 914);
 		panel.add(tabPanel);
 		
-		figureViewer.setBounds(0, 0, 5000, 5000);
+		figureViewer.setBounds(300, 40, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
 		jsp.setBounds(200, 40, 1500, 1000);
 		panel.add(jsp);

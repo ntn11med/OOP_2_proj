@@ -26,12 +26,12 @@ public class ConnectionBar extends JPanel {
 	}
 	
 	private void setBounds() {
-		connectedScroll.setBounds(10, 36, 280, 253);
+		connectedScroll.setBounds(10, 36, 180, 253);
 		btnRemove.setBounds(10, 300, 89, 23);
-		btnAdd.setBounds(201, 300, 89, 23);
-		lblConnected.setBounds(10, 11, 280, 14);
-		lblAllObjects.setBounds(10, 334, 280, 14);
-		objectScroll.setBounds(10, 359, 280, 380);
+		btnAdd.setBounds(100, 300, 89, 23);
+		lblConnected.setBounds(10, 11, 180, 14);
+		lblAllObjects.setBounds(10, 334, 180, 14);
+		objectScroll.setBounds(10, 359, 180, 380);
 	}
 	
 	private void addCtrls() {
