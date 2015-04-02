@@ -1,6 +1,5 @@
 package ui.mainFrame;
 
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -14,7 +13,6 @@ import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
 import graphicComponents.ComponentFactory;
 import graphicComponents.ComponentFactorySingleton;
-import graphicComponents.Text;
 import ui.attributeBar.AttributeBar;
 import ui.connectionBar.ConnectionBar;
 import ui.mainFrame.MainFrameMenuBar;
@@ -29,7 +27,7 @@ public class MainFrame extends JFrame {
 	private FigureMap figureMap = new FigureMap();
 	private FigureViewer figureViewer = new FigureViewer(figureMap);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
-	private SymbolBar sb; 
+	private SymbolBar sb;
 	private PropertiesBar pb = new PropertiesBar();
 	private MethodBar mb = new MethodBar();
 	private AttributeBar ab = new AttributeBar();
@@ -56,7 +54,6 @@ public class MainFrame extends JFrame {
 	private void setBorderLayout() {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		
 		JPanel tabPanel = new JPanel();
 		tabPanel.setLayout(new GridLayout());
 		TabbedPane tp = new TabbedPane();
@@ -67,7 +64,6 @@ public class MainFrame extends JFrame {
 		tabPanel.add(tp);
 		tabPanel.setBounds(0, 0, 200, 914);
 		panel.add(tabPanel);
-		
 		figureViewer.setBounds(0, 0, 5000, 5000);
 		JScrollPane jsp = new JScrollPane(figureViewer);
 		jsp.setBounds(200, 40, 1500, 1000);
@@ -75,10 +71,6 @@ public class MainFrame extends JFrame {
 		sb.setBounds(300, 0, 300, 40);
 		panel.add(sb);
 		MouseInteraction mouseInteraction = new MouseInteraction(figureMap);
-		// sb.setBounds(300, 0, 300, 40);
-		// panel.add(sb);
-		// pb.setBounds(0, 0, 200, 200);
-		// panel.add(pb);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
