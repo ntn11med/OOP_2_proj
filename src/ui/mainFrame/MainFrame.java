@@ -1,10 +1,13 @@
 package ui.mainFrame;
 
 import java.awt.GridLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+
+import model.ClassModel;
 import model.Incrementor;
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
@@ -22,13 +25,14 @@ public class MainFrame extends JFrame {
 	private FigureViewer figureViewer = new FigureViewer(figureMap);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
 	private SymbolBar sb;
-	private PropertiesBar pb = new PropertiesBar();
+	private PropertiesBar pb;
 	private MethodBar mb = new MethodBar();
 	private AttributeBar ab = new AttributeBar();
 	private ConnectionBar cb = new ConnectionBar();
 
-	public MainFrame(Incrementor incr) {
+	public MainFrame(Incrementor incr, ClassModel cm) {
 		sb = new SymbolBar(figureMap, incr);
+		pb = new PropertiesBar(cm);
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());

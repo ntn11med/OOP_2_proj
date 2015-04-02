@@ -10,6 +10,10 @@ public class ClassModel {
 		modelMap.put(incr.readLast(), new ClassData());
 	}
 	
+	public ClassData getComponent(int key) {
+		return modelMap.get(key);
+	}
+	
 	public void removeComponent(int index) {
 		modelMap.remove(index);
 	}

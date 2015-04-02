@@ -13,7 +13,7 @@ import figureComponenets.FigureList;
 import figureComponenets.FigureMap;
 import graphicComponents.ClassComponent;
 
-public class SymbolBar extends JPanel {
+public class SymbolBar extends JPanel implements Observer {
 	private static final long serialVersionUID = 1L;
 	private JButton btnClass = new JButton("Class");
 	private JButton btnConnector = new JButton("Connector");
@@ -52,4 +52,9 @@ public class SymbolBar extends JPanel {
 		}
 	}
 
+	@Override
+	public void update(Observable o, Object arg) {
+
+		
+	}
 }

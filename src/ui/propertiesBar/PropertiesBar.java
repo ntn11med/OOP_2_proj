@@ -1,11 +1,16 @@
 package ui.propertiesBar;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+
+import model.ClassModel;
 
 public class PropertiesBar extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -17,11 +22,22 @@ public class PropertiesBar extends JPanel {
 	private JRadioButton rdbtnAbstractClass = new JRadioButton("Abstract Class");
 	private JRadioButton rdbtnClass = new JRadioButton("Class");
 	private JButton btnUpdate = new JButton("Update");
+	private ClassModel cm;
 	
-	public PropertiesBar() {
+	public PropertiesBar(ClassModel cm) {
+		this.cm = cm;
 		setLayout(null);
 		setBounds();
 		addCtrls();
+		addListeners();
+	}
+	
+	private void addListeners() {
+		btnUpdate.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {addClassToModel();}});
+	}
+	
+	private void addClassToModel() {
+		cm.getComponent(1);
 	}
 	
 	private void setBounds() {

@@ -15,7 +15,7 @@ public class PanelFactory {
 	
 	public PanelFactory() {
 		panelMap.put("MethodBar", new MethodBar());
-		panelMap.put("PropertiesBar", new PropertiesBar());
+		//panelMap.put("PropertiesBar", new PropertiesBar());
 		panelMap.put("AttributeBar", new AttributeBar());
 		panelMap.put("ConnectionBar", new ConnectionBar());
 		//panelMap.put("SymbolBar", new SymbolBar());

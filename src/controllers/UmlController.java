@@ -15,7 +15,7 @@ public class UmlController implements Observer {
 	public UmlController(ClassModel classModel) {
 		this.classModel = classModel;
 		this.incr = new Incrementor();
-		this.mf = new MainFrame(incr);
+		this.mf = new MainFrame(incr, classModel);
 		mf.showFrame();
 	}
 
