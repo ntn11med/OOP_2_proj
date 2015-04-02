@@ -1,19 +1,14 @@
 package ui.mainFrame;
 
 import java.awt.GridLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-
 import model.Incrementor;
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
-import figureComponenets.FigureList;
 import figureComponenets.FigureViewer;
-import graphicComponents.ComponentFactory;
-import graphicComponents.ComponentFactorySingleton;
 import ui.attributeBar.AttributeBar;
 import ui.connectionBar.ConnectionBar;
 import ui.mainFrame.MainFrameMenuBar;
@@ -23,7 +18,6 @@ import ui.symbolBar.SymbolBar;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private FigureList figureList = new FigureList();
 	private FigureMap figureMap = new FigureMap();
 	private FigureViewer figureViewer = new FigureViewer(figureMap);
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
@@ -32,10 +26,8 @@ public class MainFrame extends JFrame {
 	private MethodBar mb = new MethodBar();
 	private AttributeBar ab = new AttributeBar();
 	private ConnectionBar cb = new ConnectionBar();
-	private ComponentFactory cf;
 
 	public MainFrame(Incrementor incr) {
-		cf = ComponentFactorySingleton.getInstance();
 		sb = new SymbolBar(figureMap, incr);
 		setGUI();
 		setBorderLayout();
@@ -76,5 +68,4 @@ public class MainFrame extends JFrame {
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
 	}
-
 }
