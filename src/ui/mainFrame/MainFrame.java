@@ -60,12 +60,12 @@ public class MainFrame extends JFrame {
 		JPanel tabPanel = new JPanel();
 		tabPanel.setLayout(new GridLayout());
 		TabbedPane tp = new TabbedPane();
-		tp.addTab("1", pb);
-		tp.addTab("2", mb);
-		tp.addTab("3", ab);
-		tp.addTab("4", cb);
+		tp.addTab("Properties", pb);
+		tp.addTab("Methods", mb);
+		tp.addTab("Attributes", ab);
+		tp.addTab("Connection", cb);
 		tabPanel.add(tp);
-		tabPanel.setBounds(0, 13, 200, 901);
+		tabPanel.setBounds(0, 0, 200, 914);
 		panel.add(tabPanel);
 		
 		figureViewer.setBounds(0, 0, 5000, 5000);
