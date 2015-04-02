@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 
 import model.Incrementor;
 import figureComponenets.FigureMap;
@@ -19,7 +20,6 @@ import ui.mainFrame.MainFrameMenuBar;
 import ui.methodBar.MethodBar;
 import ui.propertiesBar.PropertiesBar;
 import ui.symbolBar.SymbolBar;
-import ui.tabbedPane.TabbedPane;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
 		panel.setLayout(null);
 		JPanel tabPanel = new JPanel();
 		tabPanel.setLayout(new GridLayout());
-		TabbedPane tp = new TabbedPane();
+		JTabbedPane tp = new JTabbedPane();
 		tp.addTab("Properties", pb);
 		tp.addTab("Methods", mb);
 		tp.addTab("Attributes", ab);
