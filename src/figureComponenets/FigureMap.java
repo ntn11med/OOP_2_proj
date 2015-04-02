@@ -24,10 +24,10 @@ public class FigureMap extends Observable implements Observer {
 		return figures.entrySet();
 	}
 	
-	@Override
-	public void addObserver(Observer o) {
-		
-	}
+//	@Override
+//	public void addObserver(Observer o) {
+//		
+//	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
