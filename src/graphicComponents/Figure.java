@@ -3,6 +3,8 @@ package graphicComponents;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import model.ClassData;
+
 public abstract class Figure implements Drawable {
 	private Color color;
 	private boolean isSelected;
@@ -33,6 +35,7 @@ public abstract class Figure implements Drawable {
 	public abstract void move(int dx, int dy);
 	public abstract void moveTo(int dx, int dy);
 	public abstract boolean encloses(int x, int y);
+	public abstract void updateData(ClassData data);
 
 	public void setSelected(boolean isSelected) {
 		this.isSelected = isSelected;

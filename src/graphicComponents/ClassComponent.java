@@ -53,7 +53,7 @@ public class ClassComponent extends Point {
 		if (cd.getRole().equals("interface")) {
 			g.drawString("<< interface >>", dx + 5, dy + 5 + FONT_HEIGHT);
 		} else {
-			g.drawString("Hmmm", dx + 5, dy + 5 + FONT_HEIGHT);
+			g.drawString(cd.getName(), dx + 5, dy + 5 + FONT_HEIGHT);
 		}
 		g.drawString(cd.getName(), dx + 5, dy + 15 + 2 * FONT_HEIGHT);
 		for (int i = 0; i < cd.getAttributes().size(); i++)

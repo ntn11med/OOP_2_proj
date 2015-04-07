@@ -2,6 +2,8 @@ package graphicComponents;
 
 import java.awt.Graphics;
 
+import model.ClassData;
+
 public class Point extends Figure {
 	protected int x, y;
 	
@@ -37,6 +39,10 @@ public class Point extends Figure {
 
 	@Override
 	protected void setSelectedMode(boolean isSelected) {
+	}
+
+	@Override
+	public void updateData(ClassData data) {
 	}
 
 }

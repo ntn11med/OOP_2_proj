@@ -22,7 +22,7 @@ public class UmlController implements Observer {
 		this.map = new FigureMap();
 		this.mouseInteraction = new MouseInteraction(map);
 		mouseInteraction.addObserver(this);
-		this.mf = new MainFrame(incr, map, mouseInteraction);
+		this.mf = new MainFrame(classModel, incr, map, mouseInteraction);
 		mf.showFrame();
 	}
 

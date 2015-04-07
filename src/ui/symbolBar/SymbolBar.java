@@ -4,10 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
+import model.ClassModel;
 import model.Incrementor;
 import figureComponenets.FigureList;
 import figureComponenets.FigureMap;
@@ -20,6 +19,7 @@ public class SymbolBar extends JPanel implements Observer {
 	private FigureList list;
 	private FigureMap map;
 	private Incrementor incr;
+	private ClassModel cm;
 	
 	public SymbolBar(FigureList list) {
 		add(btnClass);
@@ -27,14 +27,16 @@ public class SymbolBar extends JPanel implements Observer {
 		addListeners();
 		this.list = list;
 		this.incr = new Incrementor();
+		this.cm = new ClassModel();
 	}
 	
-	public SymbolBar(FigureMap map, Incrementor incr) {
+	public SymbolBar(ClassModel cm, FigureMap map, Incrementor incr) {
 		add(btnClass);
 		add(btnConnector);
 		addListeners();
 		this.map = map;
 		this.incr = incr;
+		this.cm = cm;
 
 	}
 	
@@ -49,6 +51,7 @@ public class SymbolBar extends JPanel implements Observer {
 			list.update(null, null);
 		} else {
 			map.add(incr.getSerialNr(), new ClassComponent(0, 0));
+			cm.addComponent(incr);
 		}
 	}
 

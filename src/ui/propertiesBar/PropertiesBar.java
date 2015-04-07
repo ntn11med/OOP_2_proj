@@ -37,9 +37,9 @@ public class PropertiesBar extends JPanel {
 	private void updateClassData() {
 		cd.setName(tbClassName.getText());
 		if (rdbtnAbstractClass.isSelected())
-			cd.setRole("Interface");
-		else if (rdbtnInterface.isSelected())
 			cd.setRole("Abstract");
+		else if (rdbtnInterface.isSelected())
+			cd.setRole("Interface");
 		else
 			cd.setRole("Class");
 	}
@@ -71,5 +71,19 @@ public class PropertiesBar extends JPanel {
 	
 	public void updateClassData(ClassData cd) {
 		this.cd = cd;
+		tbClassName.setText(cd.getName());
+
+		switch (cd.getRole().toString()) {
+		case "Class":
+			rdbtnClass.setSelected(true);
+			break;
+		case "Abstract":
+			rdbtnAbstractClass.setSelected(true);
+			break;
+		case "<< Interface >>":
+			rdbtnInterface.setSelected(true);
+			break;
+		}
+		
 	}
 }

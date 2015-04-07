@@ -6,7 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
+
 import model.ClassData;
+import model.ClassModel;
 import model.Incrementor;
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
@@ -30,11 +32,11 @@ public class MainFrame extends JFrame {
 	private AttributeBar ab = new AttributeBar();
 	private ConnectionBar cb = new ConnectionBar();
 
-	public MainFrame(Incrementor incr, FigureMap map, MouseInteraction mi) {
+	public MainFrame(ClassModel cd,Incrementor incr, FigureMap map, MouseInteraction mi) {
 		this.figureMap = map;
 		figureViewer = new FigureViewer(figureMap);
 		this.mouseInteraction = mi;
-		sb = new SymbolBar(figureMap, incr);
+		sb = new SymbolBar(cd, figureMap, incr);
 		pb = new PropertiesBar();
 		setGUI();
 		setBorderLayout();
