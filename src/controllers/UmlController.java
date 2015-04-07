@@ -22,6 +22,7 @@ public class UmlController implements Observer {
 		this.classModel = classModel;
 		this.incr = new Incrementor();
 		this.map = new FigureMap();
+		classModel.addObserver(map);
 		this.mouseInteraction = new MouseInteraction(map);
 		mouseInteraction.addObserver(this);
 		this.mf = new MainFrame(classModel, incr, map, mouseInteraction);

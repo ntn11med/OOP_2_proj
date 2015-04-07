@@ -35,13 +35,15 @@ public class PropertiesBar extends JPanel {
 	}
 	
 	private void updateClassData() {
-		cd.setName(tbClassName.getText());
-		if (rdbtnAbstractClass.isSelected())
-			cd.setRole("Abstract");
-		else if (rdbtnInterface.isSelected())
-			cd.setRole("Interface");
-		else
-			cd.setRole("Class");
+		if (cd != null) {
+			cd.setName(tbClassName.getText());
+			if (rdbtnAbstractClass.isSelected())
+				cd.setRole("Abstract");
+			else if (rdbtnInterface.isSelected())
+				cd.setRole("Interface");
+			else
+				cd.setRole("Class");
+		}
 	}
 	
 	private void setBounds() {

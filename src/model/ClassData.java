@@ -2,8 +2,9 @@ package model;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
 
-public class ClassData {
+public class ClassData extends Observable {
 	private String name = "";
 	private List<String> attributes = new LinkedList<String>();
 	private List<String> methods = new LinkedList<String>();
@@ -22,24 +23,29 @@ public class ClassData {
 	public void addAttribute(String attr) {
 		checkSize(attr);
 		attributes.add(attr);
+		notifyer();
 	}
 	
 	public void removeAttribute(int index) {
 		attributes.remove(index);
+		notifyer();
 	}
 	
 	public void addMethod(String method) {
 		checkSize(method);
 		methods.add(method);
+		notifyer();
 	}
 	
 	public void removeMethod(int index) {
 		methods.remove(index);
+		notifyer();
 	}
 	
 	public void setName(String name) {
 		checkSize(name);
 		this.name = name;
+		notifyer();
 	}
 
 	public String getName() {
@@ -58,6 +64,7 @@ public class ClassData {
 		RoleFactory rf = new RoleFactory();
 		this.role = rf.getRole(role);
 		checkSize(this.role.toString());
+		notifyer();
 	}
 
 	public ClassState getRole() {
@@ -66,10 +73,12 @@ public class ClassData {
 	
 	public void addAssociation(String input) {
 		associations.add(input);
+		notifyer();
 	}
 	
 	public void removeAssociation(int index) {
 		associations.remove(index);
+		notifyer();
 	}
 	
 	public List<String> getAssociations() {
@@ -83,5 +92,10 @@ public class ClassData {
 	private void checkSize(String input) {
 		if (input.length() > maxLineLenght)
 			maxLineLenght = input.length(); 
+	}
+	
+	private void notifyer() {
+		setChanged();
+		notifyObservers();
 	}
 }
