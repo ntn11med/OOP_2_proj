@@ -1,9 +1,7 @@
 package graphicComponents;
 
 import java.awt.Graphics;
-
 import model.ClassData;
-import model.ClassRole;
 
 public class ClassComponent extends Point {
 	private int headHeight;

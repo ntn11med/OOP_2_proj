@@ -2,17 +2,13 @@ package ui.propertiesBar;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-
-import model.AbstractRole;
-import model.ClassModel;
-import model.RoleFactory;
+import model.ClassData;
 
 public class PropertiesBar extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -24,10 +20,10 @@ public class PropertiesBar extends JPanel {
 	private JRadioButton rdbtnAbstractClass = new JRadioButton("Abstract Class");
 	private JRadioButton rdbtnClass = new JRadioButton("Class");
 	private JButton btnUpdate = new JButton("Update");
-	private ClassModel cm;
+	private ClassData cd;
 	
-	public PropertiesBar(ClassModel cm) {
-		this.cm = cm;
+	public PropertiesBar() {
+		this.cd = null;
 		setLayout(null);
 		setBounds();
 		addCtrls();
@@ -39,13 +35,13 @@ public class PropertiesBar extends JPanel {
 	}
 	
 	private void updateClassData() {
-		cm.getComponent(1).setName(tbClassName.getText());
+		cd.setName(tbClassName.getText());
 		if (rdbtnAbstractClass.isSelected())
-			cm.getComponent(1).setRole("Interface");
+			cd.setRole("Interface");
 		else if (rdbtnInterface.isSelected())
-			cm.getComponent(1).setRole("Abstract");
+			cd.setRole("Abstract");
 		else
-			cm.getComponent(1).setRole("Class");
+			cd.setRole("Class");
 	}
 	
 	private void setBounds() {
@@ -71,5 +67,9 @@ public class PropertiesBar extends JPanel {
 		rdbtnClass.setSelected(true);
 		add(rdbtnClass);
 		add(btnUpdate);
+	}
+	
+	public void updateClassData(ClassData cd) {
+		this.cd = cd;
 	}
 }

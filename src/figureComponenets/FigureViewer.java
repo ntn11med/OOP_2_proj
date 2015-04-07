@@ -23,7 +23,7 @@ public class FigureViewer extends JPanel implements Observer {
 	
 	public FigureViewer(FigureMap figureMap) {
 		this.figureMap = figureMap;
-		figureMap.addObserver(this);
+		//figureMap.addObserver(this);
 		setBackground(Color.blue);
 		figureMap.addObserver(this);
 	}

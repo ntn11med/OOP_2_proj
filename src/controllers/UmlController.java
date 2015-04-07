@@ -3,6 +3,8 @@ package controllers;
 import java.util.Observable;
 import java.util.Observer;
 
+import figureComponenets.FigureMap;
+import figureComponenets.MouseInteraction;
 import ui.mainFrame.MainFrame;
 import model.ClassModel;
 import model.Incrementor;
@@ -11,11 +13,16 @@ public class UmlController implements Observer {
 	private ClassModel classModel;
 	private MainFrame mf;
 	private Incrementor incr = new Incrementor();
+	private FigureMap map;
+	private MouseInteraction mouseInteraction;
 
 	public UmlController(ClassModel classModel) {
 		this.classModel = classModel;
 		this.incr = new Incrementor();
-		this.mf = new MainFrame(incr, classModel);
+		this.map = new FigureMap();
+		this.mouseInteraction = new MouseInteraction(map);
+		mouseInteraction.addObserver(this);
+		this.mf = new MainFrame(incr, map, mouseInteraction);
 		mf.showFrame();
 	}
 
@@ -34,7 +41,7 @@ public class UmlController implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
+		mf.updateClassData(classModel.getComponent(mouseInteraction.getSelectedKey()));
 		
 	}
 

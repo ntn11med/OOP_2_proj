@@ -6,8 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-
-import model.ClassModel;
+import model.ClassData;
 import model.Incrementor;
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
@@ -21,18 +20,22 @@ import ui.symbolBar.SymbolBar;
 
 public class MainFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private FigureMap figureMap = new FigureMap();
-	private FigureViewer figureViewer = new FigureViewer(figureMap);
+	private FigureMap figureMap;
+	private FigureViewer figureViewer;
 	private MainFrameMenuBar menuBar = new MainFrameMenuBar();
+	private MouseInteraction mouseInteraction;
 	private SymbolBar sb;
 	private PropertiesBar pb;
 	private MethodBar mb = new MethodBar();
 	private AttributeBar ab = new AttributeBar();
 	private ConnectionBar cb = new ConnectionBar();
 
-	public MainFrame(Incrementor incr, ClassModel cm) {
+	public MainFrame(Incrementor incr, FigureMap map, MouseInteraction mi) {
+		this.figureMap = map;
+		figureViewer = new FigureViewer(figureMap);
+		this.mouseInteraction = mi;
 		sb = new SymbolBar(figureMap, incr);
-		pb = new PropertiesBar(cm);
+		pb = new PropertiesBar();
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());
@@ -67,9 +70,12 @@ public class MainFrame extends JFrame {
 		panel.add(jsp);
 		sb.setBounds(300, 0, 300, 40);
 		panel.add(sb);
-		MouseInteraction mouseInteraction = new MouseInteraction(figureMap);
 		figureViewer.addMouseListener(mouseInteraction);
 		figureViewer.addMouseMotionListener(mouseInteraction);
 		setContentPane(panel);
+	}
+	
+	public void updateClassData(ClassData cd) {
+		pb.updateClassData(cd);
 	}
 }
