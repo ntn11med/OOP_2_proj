@@ -11,9 +11,9 @@ public class ClassComponent extends Point {
 	private int dx, dy;
 	private boolean isSelected;
 	private ClassData cd = new ClassData("Class");
-	private final int HEAD_HEIGHT = 30;
+	private final int HEAD_HEIGHT = 40;
 	private final int FONT_HEIGHT = 8;
-	private final int FONT_WIDTH = 5;
+	private final int FONT_WIDTH = 10;
 	
 	public ClassComponent(int x, int y) {
 		this(x, y, 30, 60);
@@ -50,10 +50,10 @@ public class ClassComponent extends Point {
 	
 	@Override
 	protected void drawSpecific(Graphics g) {
-		if (cd.getRole().equals("interface")) {
+		if (cd.getRole().toString().equals("<< Interface >>")) {
 			g.drawString("<< interface >>", dx + 5, dy + 5 + FONT_HEIGHT);
 		} else {
-			g.drawString(cd.getName(), dx + 5, dy + 5 + FONT_HEIGHT);
+			g.drawString("", dx + 5, dy + 5 + FONT_HEIGHT);
 		}
 		g.drawString(cd.getName(), dx + 5, dy + 15 + 2 * FONT_HEIGHT);
 		for (int i = 0; i < cd.getAttributes().size(); i++)
