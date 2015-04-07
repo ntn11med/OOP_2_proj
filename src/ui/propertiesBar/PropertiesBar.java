@@ -10,7 +10,9 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 
+import model.AbstractRole;
 import model.ClassModel;
+import model.RoleFactory;
 
 public class PropertiesBar extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -33,11 +35,17 @@ public class PropertiesBar extends JPanel {
 	}
 	
 	private void addListeners() {
-		btnUpdate.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {addClassToModel();}});
+		btnUpdate.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent e) {updateClassData();}});
 	}
 	
-	private void addClassToModel() {
-		cm.getComponent(1);
+	private void updateClassData() {
+		cm.getComponent(1).setName(tbClassName.getText());
+		if (rdbtnAbstractClass.isSelected())
+			cm.getComponent(1).setRole("Interface");
+		else if (rdbtnInterface.isSelected())
+			cm.getComponent(1).setRole("Abstract");
+		else
+			cm.getComponent(1).setRole("Class");
 	}
 	
 	private void setBounds() {
