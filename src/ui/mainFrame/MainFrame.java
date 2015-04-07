@@ -79,5 +79,6 @@ public class MainFrame extends JFrame {
 	
 	public void updateClassData(ClassData cd) {
 		pb.updateClassData(cd);
+		ab.updateClassData(cd);
 	}
 }
