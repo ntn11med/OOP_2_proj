@@ -14,6 +14,7 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 	private Figure selectedFigure = new Point();
 	private FigureList list;
 	private FigureMap map;
+	private int selectedFigureKey;
 	
 	public MouseInteraction(FigureList list) {
 		this.list = list;
@@ -23,6 +24,10 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 	public MouseInteraction(FigureMap map) {
 		this.map = map;
 		addObserver(map);
+	}
+	
+	public int getSelectedKey() {
+		return selectedFigureKey;
 	}
 	
 	@Override
@@ -49,8 +54,10 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 			Figure fig;
 			for (Map.Entry<Integer, Figure> entry : map.entrySet()) {
 				fig = entry.getValue();
-				if (fig.encloses(e.getX(), e.getY()))
+				if (fig.encloses(e.getX(), e.getY())) {
 					selectedFigure = fig;
+					selectedFigureKey = entry.getKey();
+				}
 			}
 		}
 		if (!currentFig.equals(selectedFigure)) {
@@ -80,8 +87,10 @@ public class MouseInteraction extends Observable implements MouseListener, Mouse
 			Figure fig;
 			for (Map.Entry<Integer, Figure> entry : map.entrySet()) {
 				fig = entry.getValue();
-				if (fig.encloses(e.getX(), e.getY()))
+				if (fig.encloses(e.getX(), e.getY())) {
 					selectedFigure = fig;
+					selectedFigureKey = entry.getKey();
+				}
 			}
 		}
 		if (!currentFig.equals(selectedFigure)) {
