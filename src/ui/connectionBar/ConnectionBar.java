@@ -5,6 +5,7 @@ import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+import model.ClassData;
 
 public class ConnectionBar extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -16,12 +17,13 @@ public class ConnectionBar extends JPanel {
 	private JButton btnAdd = new JButton("Add");
 	private JLabel lblConnected = new JLabel("Current connections");
 	private JLabel lblAllObjects = new JLabel("All objects to connect to");
+	private ConnectionBarListener listener;
 	
 	public ConnectionBar() {
 		setLayout(null);
 		setBounds();
 		addCtrls();
-		ConnectionBarListener listener = new ConnectionBarListener(this);
+		listener = new ConnectionBarListener(this);
 		listener.addListeners();
 	}
 	
@@ -41,6 +43,10 @@ public class ConnectionBar extends JPanel {
 		add(lblConnected);
 		add(lblAllObjects);
 		add(objectScroll);
+	}
+	
+	public void updateClassData(ClassData cd) {
+		listener.updateClassData(cd);
 	}
 
 	public JList<String> getListConnected() {

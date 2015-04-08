@@ -30,14 +30,15 @@ public class MainFrame extends JFrame {
 	private PropertiesBar pb;
 	private MethodBar mb = new MethodBar();
 	private AttributeBar ab = new AttributeBar();
-	private ConnectionBar cb = new ConnectionBar();
+	private ConnectionBar cb;
 
-	public MainFrame(ClassModel cd,Incrementor incr, FigureMap map, MouseInteraction mi) {
+	public MainFrame(ClassModel cm,Incrementor incr, FigureMap map, MouseInteraction mi) {
 		this.figureMap = map;
 		figureViewer = new FigureViewer(figureMap);
 		this.mouseInteraction = mi;
-		sb = new SymbolBar(cd, figureMap, incr);
+		sb = new SymbolBar(cm, figureMap, incr);
 		pb = new PropertiesBar();
+		cb = new ConnectionBar();
 		setGUI();
 		setBorderLayout();
 		setJMenuBar(menuBar.getMenu());
@@ -80,5 +81,6 @@ public class MainFrame extends JFrame {
 	public void updateClassData(ClassData cd) {
 		pb.updateClassData(cd);
 		ab.updateClassData(cd);
+		cb.updateClassData(cd);
 	}
 }

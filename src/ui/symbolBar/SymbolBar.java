@@ -14,7 +14,7 @@ import graphicComponents.ClassComponent;
 
 public class SymbolBar extends JPanel implements Observer {
 	private static final long serialVersionUID = 1L;
-	private JButton btnClass = new JButton("Class");
+	private JButton btnClass = new JButton("Add Class");
 	private JButton btnConnector = new JButton("Connector");
 	private FigureList list;
 	private FigureMap map;
@@ -23,7 +23,7 @@ public class SymbolBar extends JPanel implements Observer {
 	
 	public SymbolBar(FigureList list) {
 		add(btnClass);
-		add(btnConnector);
+//		add(btnConnector);
 		addListeners();
 		this.list = list;
 		this.incr = new Incrementor();
@@ -32,7 +32,7 @@ public class SymbolBar extends JPanel implements Observer {
 	
 	public SymbolBar(ClassModel cm, FigureMap map, Incrementor incr) {
 		add(btnClass);
-		add(btnConnector);
+//		add(btnConnector);
 		addListeners();
 		this.map = map;
 		this.incr = incr;
