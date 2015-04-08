@@ -61,7 +61,7 @@ public class ClassComponent extends Point {
 		for (int i = 0; i < cd.getAttributes().size(); i++)
 			g.drawString(cd.getAttributes().get(i), dx + 5, dy + HEAD_HEIGHT + 2 * FONT_HEIGHT * (i + 1) );
 		for (int i = 0; i < cd.getMethods().size(); i++)
-			g.drawString(cd.getMethods().get(i), dx + 5, dy + HEAD_HEIGHT + attributeHeight + FONT_HEIGHT * (i + 1) );
+			g.drawString(cd.getMethods().get(i), dx + 5, dy + HEAD_HEIGHT + attributeHeight + 2 * FONT_HEIGHT * (i + 1) );
 		g.drawRect(dx, dy, width, headHeight);
 		g.drawRect(dx, dy+headHeight, width, attributeHeight);
 		g.drawRect(dx, dy+headHeight+attributeHeight, width, methodHeight);
