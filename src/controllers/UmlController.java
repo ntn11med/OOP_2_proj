@@ -3,9 +3,9 @@ package controllers;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
-
 import figureComponenets.FigureMap;
 import figureComponenets.MouseInteraction;
+import graphicComponents.ConnectorLineCalculator;
 import graphicComponents.Figure;
 import ui.mainFrame.MainFrame;
 import model.ClassModel;
@@ -17,6 +17,7 @@ public class UmlController implements Observer {
 	private Incrementor incr = new Incrementor();
 	private FigureMap map;
 	private MouseInteraction mouseInteraction;
+	ConnectorLineCalculator clc;
 
 	public UmlController(ClassModel classModel) {
 		this.classModel = classModel;
@@ -25,6 +26,7 @@ public class UmlController implements Observer {
 		classModel.addObserver(map);
 		this.mouseInteraction = new MouseInteraction(map);
 		mouseInteraction.addObserver(this);
+		clc = new ConnectorLineCalculator(map);
 		this.mf = new MainFrame(classModel, incr, map, mouseInteraction);
 		mf.showFrame();
 	}

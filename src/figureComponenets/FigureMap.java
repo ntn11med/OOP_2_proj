@@ -15,6 +15,10 @@ public class FigureMap extends Observable implements Observer {
 		setChanged();
 		notifyObservers();
 	}
+	
+	public Figure get(int key) {
+		return figures.get(key);
+	}
 
 	public void remove(Integer key) {
 		figures.remove(key);

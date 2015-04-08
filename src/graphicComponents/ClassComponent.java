@@ -71,7 +71,8 @@ public class ClassComponent extends Point {
 		}
 		for (int i = 0; i < cd.getAssociationKeys().size(); i++) {
 			if (cd.getAssociationKeys().get(i) != null) {
-				
+				LineCoordinateTO coordinates = ConnectorLineCalculator.calulateCoordinates(dx, dy, cd.getAssociationKeys().get(i));
+				g.drawLine(coordinates.getX1(), coordinates.getY1(), coordinates.getX2(), coordinates.getY2());
 			}
 		}
 	}
