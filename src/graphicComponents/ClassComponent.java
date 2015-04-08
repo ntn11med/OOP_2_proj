@@ -38,8 +38,10 @@ public class ClassComponent extends Point {
 	
 	private void calcuateBorders(ClassData data) {
 		this.headHeight = HEAD_HEIGHT;
-		this.attributeHeight = data.getAttributes().size() * (15 + FONT_HEIGHT);
-		this.methodHeight = data.getMethods().size() * (15 + FONT_HEIGHT);
+		if (data.getAttributes().size()>0)
+			this.attributeHeight = data.getAttributes().size() * (15 + FONT_HEIGHT);
+		if (data.getMethods().size()>0)
+			this.methodHeight = data.getMethods().size() * (15 + FONT_HEIGHT);
 		this.width = data.getMaxLineLenght() * FONT_WIDTH;
 		cd = data;
 	}
@@ -66,6 +68,11 @@ public class ClassComponent extends Point {
 		if (isSelected) {
 			Outline ol = new Outline(new Point(dx-5, dy-5), width+10, headHeight+attributeHeight+methodHeight+10);
 			ol.drawSpecific(g);
+		}
+		for (int i = 0; i < cd.getAssociationKeys().size(); i++) {
+			if (cd.getAssociationKeys().get(i) != null) {
+				
+			}
 		}
 	}
 	

@@ -10,6 +10,7 @@ public class ClassData extends Observable {
 	private List<String> methods = new LinkedList<String>();
 	private ClassState role;
 	private List<String> associations = new LinkedList<String>();
+	private List<Integer> associationKeys = new LinkedList<Integer>();
 	private int maxLineLenght = 0;
 	
 	public ClassData() {
@@ -71,18 +72,28 @@ public class ClassData extends Observable {
 		return role;
 	}
 	
-	public void addAssociation(String input) {
+	public void addAssociationName(String input) {
 		associations.add(input);
+		notifyer();
+	}
+	
+	public void addAssociationKey(Integer input) {
+		associationKeys.add(input);
 		notifyer();
 	}
 	
 	public void removeAssociation(int index) {
 		associations.remove(index);
+		associationKeys.remove(index);
 		notifyer();
 	}
 	
 	public List<String> getAssociations() {
 		return associations;
+	}
+	
+	public List<Integer> getAssociationKeys() {
+		return associationKeys;
 	}
 	
 	public int getMaxLineLenght() {
