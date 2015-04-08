@@ -40,7 +40,7 @@ public class AttributeBar extends JPanel {
 			for (int i = 0; i < cd.getAttributes().size(); i++)
 				attr[attrIndex++] = cd.getAttributes().get(i);
 		}
-		
+		list.setListData(attr);
 	}
 	
 	private void addListeners() {

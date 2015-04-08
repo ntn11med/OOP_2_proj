@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import model.ClassData;
+import model.ClassModel;
 
 public class ConnectionBar extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -47,6 +48,10 @@ public class ConnectionBar extends JPanel {
 	
 	public void updateClassData(ClassData cd) {
 		listener.updateClassData(cd);
+	}
+	
+	public void updateClassModel(ClassModel cm) {
+		listener.updateClassModel(cm);
 	}
 
 	public JList<String> getListConnected() {
