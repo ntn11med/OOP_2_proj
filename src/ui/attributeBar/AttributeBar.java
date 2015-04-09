@@ -59,8 +59,8 @@ public class AttributeBar extends JPanel {
 	private void removeFromList() {
 		if (!list.isSelectionEmpty()) {
 			attr[list.getSelectedIndex()] = "";
-			list.setListData(attr);
 			cd.removeAttribute(list.getSelectedIndex());
+			list.setListData(attr);
 		}
 	}
 	

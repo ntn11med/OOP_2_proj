@@ -60,8 +60,8 @@ public class MethodBar extends JPanel {
 	private void removeFromList() {
 		if (!list.isSelectionEmpty()) {
 			methods[list.getSelectedIndex()] = "";
-			list.setListData(methods);
 			cd.removeMethod(list.getSelectedIndex());
+			list.setListData(methods);
 		}
 	}
 	
