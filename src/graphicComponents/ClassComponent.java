@@ -8,7 +8,7 @@ public class ClassComponent extends Point {
 	private int attributeHeight;
 	private int methodHeight;
 	private int width;
-	private int dx, dy;
+	protected int dx, dy;
 	private boolean isSelected;
 	private ClassData cd = new ClassData("Class");
 	private final int HEAD_HEIGHT = 40;

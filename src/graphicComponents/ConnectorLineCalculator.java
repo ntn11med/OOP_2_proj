@@ -10,7 +10,7 @@ public class ConnectorLineCalculator {
 	}
 	
 	public static LineCoordinateTO calulateCoordinates(int x, int y, int key) {
-		Point p = (Point) figureMap.get(key);
-		return new LineCoordinateTO(x, y, p.x, p.y);
+		ClassComponent p = (ClassComponent) figureMap.get(key);
+		return new LineCoordinateTO(x, y, p.dx, p.dy);
 	}
 }
